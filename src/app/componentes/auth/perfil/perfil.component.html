@@ -1,0 +1,77 @@
+<div class="card">
+  <div class="card-header h5 text-center">Perfil<br>
+    <small class="text-muted">~Un lugar donde te describe a la perfección~ —Tu conciencia</small>
+  </div>
+  <hr class="my-4">
+  <div class="card-body">
+    <p class="card-text"><strong>Nombre: </strong>{{perfil.nombre}}</p>
+    <p class="card-text"><strong>Apellidos: </strong>{{perfil.apellidos}}</p>
+    <p class="card-text"><strong>DNI: </strong>{{perfil.dni}}</p>
+    <p class="card-text"><strong>E-mail: </strong>{{perfil.email}}</p>
+    <p class="card-text"><strong>Teléfono: </strong>{{perfil.telefono}}</p>
+    <img id="img" src='{{perfil.imgSrc? perfil.imgSrc : "assets/images/no_photo.png"}}' width="200px">
+    <hr class="my-4">
+    <div class="text-center align-items-center">
+      <button id="but1" class="btn btn-primary" (click)='mostrarEditar=!mostrarEditar'>Editar usuario</button>
+      <button id="but2" class="btn btn-primary" (click)='mostrarEliminar=!mostrarEliminar'>Eliminar usuario</button>
+    </div>
+  </div>
+</div>
+<div class="card" *ngIf='mostrarEditar'>
+  <form [formGroup]="formPerfil" (submit)="editarPerfil()">
+    <div class="form-row mb-1">
+      <div class="form-group col-md-3">
+        <label for="nombre">Nombre:</label>
+        <input class="form-control" type="text" placeholder="Nombre" id="nombre" formControlName="nombre">
+      </div>
+      <div class="form-group col-md-6">
+        <label for="apellidos">Apellidos:</label>
+        <input class="form-control" type="text" placeholder="Apellidos" id="apellidos" formControlName="apellidos">
+      </div>
+    </div>
+    <div class="form-row mb-1">
+      <div class="form-group col-md-2">
+        <label for="telefono">Teléfono:</label>
+        <input class="form-control" type="number" placeholder="Teléfono" id="telefono" formControlName="telefono">
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">E-Mail:</label>
+        <input class="form-control" type="text" placeholder="E-Mail" id="email" formControlName="email">
+      </div>
+      <div class="form-group col-md-3">
+        <label for="password">Contraseña:</label>
+        <input class="form-control" type="text" placeholder="Contraseña" id="password" formControlName="password">
+      </div>
+
+    </div>
+    <button class="btn btn-primary btn-block" type="submit" [disabled]="!formPerfil.valid">Guardar cambios</button>
+  </form>
+  <button (click)='mostrarEditar=!mostrarEditar'>Cancelar</button>
+</div>
+<div class="card" *ngIf="mostrarEliminar">
+  <div class="card-header h5 text-center">Para eliminar tu perfil introduce tu e-mail</div>
+  <div class="card-body">
+    <input class="form-control" type='text' [(ngModel)]='inputBorrar' placeholder="email">
+    <div id="container">
+      <button id="but1" class="btn btn-primary"
+        (click)='mostrarEliminar=!mostrarEliminar; inputBorrar=""'>Cancelar</button>
+      <button id="but2" class="btn btn-primary" (click)='eliminarUsuario()'
+        [disabled]='inputBorrar!=perfil.email'>Eliminar</button>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <form [formGroup]='formImagen' (ngSubmit)='subirImagen()'>
+    <input class="input-group-text" type="file" formControlName='imagen' (change)='cambiarImagen($event)'>
+    <hr class="my-4">
+    <div id="but3">
+      <button class="btn btn-primary btn-block" type="submit">Subir imagen de perfil</button>
+    </div>
+  </form>
+  <hr class="my-4">
+  <input class="input-group-text" type="file" (change)='tengoFoto($event)'><br>
+  <hr class="my-4">
+  <div id="but4">
+    <button class="btn btn-primary btn-block" type="button" (click)='subirFoto()'>Subir imagen por parámetros</button>
+  </div>
+</div>

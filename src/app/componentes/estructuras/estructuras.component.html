@@ -1,0 +1,94 @@
+<div class="jumbotron">
+    <div class="card">
+        <div class="card-body">
+            <h4 id="titulo" class="card-title">Estructura de control con IfElse</h4>
+            <div id="frase">
+                <small class="text-muted">~192.168.1.20~<small id="err" class="text">—Tu dirección</small></small>
+            </div>
+            <hr id="hrT">
+            <label for="verdad">
+                <div id="check">
+                    <input class="form-check-input mt-0" type="checkbox" id="verdad" [(ngModel)]="verdad">
+                </div>
+            </label>
+            <h5>{{verdad? "Es verdad" : "Es mentira"}} con ternario</h5>
+            <hr>
+            <h5 *ngIf="verdad; else mentira">Es verdad con *ngIf</h5>
+            <ng-template #mentira>
+                <h5>Es mentira con *ngIf</h5>
+            </ng-template>
+            <input class="form-control" type="number" id="edad" [(ngModel)]="edad">
+            <hr id="com">
+            <h5 id="titu">If-Else con SugarCandy</h5>
+            <h5 *ngIf="edad < 18; else adulto">Eres menor de 18 años. Tienes {{edad}} años.</h5>
+            <ng-template #adulto>
+                <ng-container *ngIf="edad < 30; else mayor">
+                    <h5>Eres menor de 30 años. Tienes {{edad}} años.</h5>
+                </ng-container>
+            </ng-template>
+            <ng-template #mayor>
+                <h5>Eres mayor de 30 años. Tienes {{edad}} años.</h5>
+            </ng-template>
+            <hr>
+            <h5 id="titu">If-Else con microsintaxis</h5>
+            <ng-template [ngIf]="edad < 18" [ngIfElse]="adulto2">
+                <h5>Es menor de 18 años</h5>
+            </ng-template>
+            <ng-template #adulto2>
+                <ng-template [ngIf]="edad < 30" [ngIfElse]="mayor2">
+                    <h5>Es menor de 30 años.</h5>
+                </ng-template>
+            </ng-template>
+            <ng-template #mayor2>
+                <h5>Es usted mayor de 30 años.</h5>
+            </ng-template>
+            <hr>
+            <h5 id="titu">Estructura For avanzado</h5>
+            <ul>
+                <li *ngFor="let numero of [0, 11, 22, 33, 44, 55]; let indice = index; let impar = odd; let primero = first; let ultimo = last; let cuenta = count;"
+                    [ngClass]="{'text-danger':impar, 'bg-primary':primero}"
+                    (click)=muestraLog(indice,impar,primero,ultimo,cuenta)>
+                    En la posición {{indice}} de {{cuenta - 1}}, que es {{impar? "impar": "par"}}, esta el número
+                    {{numero}}
+                    {{primero? ", que es el primer elemento del array" : ""}} {{ultimo? ", que es el último elemento del
+                    array" :
+                    ""}}
+                </li>
+            </ul>
+            <hr>
+            <h5 id="titu">Estructura For avanzado en tabla.</h5>
+            <hr>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Posición</th>
+                        <th>Par/Impar</th>
+                        <th>Número</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let numero of [0, 11, 22, 33, 44, 55]; let indice = index; let impar = odd; let primero = first; let ultimo = last; let cuenta = count;"
+                        [ngClass]="{'text-danger':impar, 'bg-primary':primero}">
+                        <td>{{indice}}</td>
+                        <td>{{impar? 'impar' : 'par'}}</td>
+                        <td>{{numero}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+            <input id="inp1" class="form-control" type="number" placeholder="Número 1" [(ngModel)]="num1">
+            <input id="inp2" class="form-control" type="number" placeholder="Número 2" [(ngModel)]="num2">
+            <select id="sel" class="dropdown-item" [(ngModel)]="operador">
+                <option id="sel" class="dropdown" *ngFor="let operacion of operaciones" [value]="operacion">
+                    {{operacion}}</option>
+            </select>
+            <div id="resultado" [ngSwitch]="operador">
+                <span *ngSwitchCase='"sumar"'>{{num1 + num2}}</span>
+                <span *ngSwitchCase='"restar"'>{{num1 - num2}}</span>
+                <span *ngSwitchCase='"multiplicar"'>{{num1 * num2}}</span>
+                <span *ngSwitchCase='"dividir"'>{{num1 / num2}}</span>
+                <span *ngSwitchDefault>Selecciona una operación.</span>
+            </div>
+        </div>
+    </div>
+</div>

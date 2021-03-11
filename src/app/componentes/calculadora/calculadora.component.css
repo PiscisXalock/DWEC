@@ -1,0 +1,29 @@
+*{
+    text-align: center;
+}
+
+#hrI{
+    border: 0.5px solid cornflowerblue;
+}
+
+input{
+    border: 0.5px solid black;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+input:hover{
+    border: 0.5px solid cornflowerblue;
+    font-weight: bold;
+}
+
+input:focus{
+    border: 0.5px solid cornflowerblue;
+    font-weight: bold;
+}
+
+#container{
+    margin: 0 auto;
+    display: block;
+    margin-top: 10px;
+}

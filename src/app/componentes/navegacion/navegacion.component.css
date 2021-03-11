@@ -1,0 +1,17 @@
+ul, li{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+li{
+    margin: auto;
+    padding: auto;
+}
+
+nav ul {
+  text-align: center;
+}
+ 
+nav ul li {
+  display: inline-block;
+}

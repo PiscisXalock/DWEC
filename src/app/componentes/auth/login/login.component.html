@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <h3 id="titulo">
+        Login<br>
+        <small class="text-muted">~¿Estás seguro de querer entrar?~ —Tu conciencia</small>
+    </h3>
+<hr class="my-4">
+<!--<div id="mensaje_error" class="alert alert-danger" role="alert" *ngIf='mens == true'>
+    <strong>{{mensaje}}</strong>
+</div>-->
+<form [formGroup]="formLogin" (submit)="submit()">
+    <div class="form-group">
+        <input class="form-control" type="text" formControlName="email" placeholder="E-Mail"><br>
+        <input class="form-control" type="text" formControlName="password" placeholder="Password"><br>
+        <hr id="but" class="my-4">
+        <button class="btn btn-primary mb-2" type="submit" [disabled]="formLogin.invalid">Login</button>
+    </div>
+</form>
+</div>

@@ -1,0 +1,93 @@
+<div class="jumbotron">
+    <h3 id="titulo">
+        Formulario<br>
+        <small class="text-muted">Forma 1</small>
+    </h3>
+    <hr class="my-4">
+    <form class="form-group" [formGroup]="formRegister" (submit)="evaluaForm()">
+        <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre"><br>
+        <input class="form-control" type="text" formControlName="apellidos" placeholder="Apellidos"><br>
+        <input class="form-control" type="password" formControlName="password" placeholder="Password"><br>
+        <input class="form-control" type="text" formControlName="email" placeholder="E-Mail"><br>
+        <input class="form-control" type="text" formControlName="dni" placeholder="DNI"><br>
+        <input class="form-control" type="number" formControlName="telefono" placeholder="Teléfono"><br>
+        <hr id="hrSub">
+        <button class="btn btn-primary" type="submit" [disabled]="formRegister.invalid">Registrar</button>
+    </form>
+
+    <div *ngIf="nombre1.invalid && (nombre1.dirty || nombre1.touched)" class="alert alert-danger">
+        <div id="errForm">
+            <hr>
+            <div *ngIf="nombre1.errors.required">
+                <p class="mb-0">El nombre es requerido</p>
+            </div>
+            <div *ngIf="nombre1.errors.minlength">
+                <p class="mb-0">El nombre debe tener al menos tres caracteres</p>
+            </div>
+            <hr>
+        </div>
+    </div>
+    <div *ngIf="email1.invalid && (email1.dirty || email1.touched)" class="alert alert-danger">
+        <div id="errForm">
+            <hr>
+            <div *ngIf="email1.errors.required">
+                <p class="mb-0">El e-mail es requerido</p>
+            </div>
+            <div *ngIf="email1.errors.email">
+                <p class="mb-0">El e-mail introducido no es correcto</p>
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <div *ngIf="dni1.invalid && (dni1.dirty || dni1.touched)" class="alert alert-danger">
+        <div id="errForm">
+            <hr>
+            <p class="mb-0">El DNI no es valido</p>
+            <hr>
+        </div>
+    </div>
+
+    <div *ngIf="password1.invalid && (password1.dirty || password1.touched)" class="alert alert-danger">
+        <div id="errForm">
+            <hr>
+            <p class="mb-0">El password no es valido</p>
+            <hr>
+        </div>
+    </div>
+
+    <div *ngIf="apellidos1.invalid && (apellidos1.dirty || apellidos1.touched)" class="alert alert-danger">
+        <div id="errForm">
+            <hr>
+            <p class="mb-0">Los apellidos son requeridos</p>
+            <hr>
+        </div>
+    </div>
+
+    <div *ngIf="telefono1.invalid && (telefono1.dirty || telefono1.touched)" class="alert alert-danger">
+        <div id="errForm">
+            <hr>
+            <p class="mb-0">El telefono es requerido</p>
+            <hr>
+        </div>
+    </div>
+
+    <hr id="sepForm">
+    <h3 id="titulo">
+        Formulario<br>
+        <small class="text-muted">Forma 2</small>
+    </h3>
+    <hr class="my-4">
+    <form class="form-group" [formGroup]="formRegister2" (submit)="evaluaForm()">
+        <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre"><br>
+        <input class="form-control" type="text" formControlName="apellidos" placeholder="Apellidos"><br>
+        <input class="form-control" type="text" formControlName="password" placeholder="Password"><br>
+        <input class="form-control" type="text" formControlName="email" placeholder="E-Mail"><br>
+        <input class="form-control" type="text" formControlName="dni" placeholder="DNI"><br>
+        <input class="form-control" type="number" formControlName="telefono" placeholder="Teléfono"><br>
+        <hr id="hrSub">
+        <button class="btn btn-primary" type="submit" [disabled]="formRegister.invalid">Registrar</button>
+    </form>
+    <hr>
+    <!--{{dni1.errors | json}}-->
+</div>

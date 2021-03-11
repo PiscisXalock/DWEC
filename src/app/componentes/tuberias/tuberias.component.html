@@ -1,0 +1,22 @@
+<div class="jumbotron">
+  <h3 id="titulo">
+    Tuberías<br>
+    <small class="text-muted">Ejemplos</small>
+  </h3>
+  <hr class="my-4">
+  <p class="lead">Covertir a mayúsculas: <span id="resultado">{{usuario | uppercase}}</span></p>
+  <p class="lead">Convertir a minúsculas: <span id="resultado">{{mes | lowercase}}</span></p>
+  <p class="lead">La primera letra de cada palabra en mayúsculas <span id="resultado"></span>{{texto | titlecase}}</p>
+  <p class="lead">Fecha: <span id="resultado">{{fecha | date}}</span></p>
+  <p class="lead">Fecha editada: <span id="resultado">{{fecha | date:"dd/MM/yyyy"}}</span></p>
+  <p class="lead">Hora: <span id="resultado">{{fecha | date:"hh:mm:ss"}}</span></p>
+  <p class="lead">Dinero: <span id="resultado">{{dinero | currency:"EUR"}}</span></p>
+  <p class="lead">Número redondeado: <span id="resultado">{{numero_pi | number:".3"}}</span></p>
+  <p class="lead">Seleccionar elementos de un array: <span id="resultado">{{preposiciones | slice:2:5}}</span></p>
+  <p class="lead">Convertir objeto a formato json: <span id="resultado">{{usuarios | json}}</span></p>
+  <p class="lead">El cuadrado del 5: <span id="resultado">{{5 | numeros:"cuadrado"}}</span></p>
+  <p class="lead">La raíz cuadrada de 81: <span id="resultado">{{81 | numeros: "raiz"}}</span></p>
+  <p class="lead">El número 5 equivale a la letra: <span id="resultado">{{5 | numeros: "aletras"}}</span></p>
+  <input class="form-control" type="number" [(ngModel)]="dni" placeholder="Introduce los números del dni">
+  <p class="lead">La letra que corresponde a tu dni es: <span id="resultado">{{dni | letraDNI: "letra"}}</span></p>
+</div>

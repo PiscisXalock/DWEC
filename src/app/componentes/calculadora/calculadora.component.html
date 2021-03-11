@@ -1,0 +1,21 @@
+<div class="jumbotron">
+    <div class="card">
+        <div class="card-body">
+            <h4 id="titulo" class="card-title">Calculadora</h4>
+            <div id="frase">
+                <small class="text-muted">~Cansado de calcular la tabla de un número a mano. Pues quedese
+                    aquí.<br>Está es la mejor página para calcular la tabla del número que eligas.<br>¿Gran oferta?
+                    exacto.<br>¿Trampa? Ninguna.<br>¿Hotel? Trivago~
+                    —Hombre que se hizo meme</small>
+            </div>
+            <hr id="hrI">
+            <input class="form-control" type="number" [(ngModel)]="num_entrada">
+            <a routerLink="/multiplicar/{{num_entrada}}">Mostrar la tabla del número {{num_entrada}} a través del
+                RouterLink</a>
+            <div id="container">
+                <button class="btn btn-primary" (click)="navegarHacia(num_entrada)">Mostrar tabla a través del módulo
+                    Router</button>
+            </div>
+        </div>
+    </div>
+</div>

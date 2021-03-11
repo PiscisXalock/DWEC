@@ -1,0 +1,25 @@
+<div class="jumbotron">
+    <h3 id="titulo">
+        Lotería Bosco<br>
+        <small class="text-muted">~Tranquilo si no ganas no suspendes~</small>
+    </h3>
+    <hr id="hf" class="my-4">
+    <button class="btn btn-primary" (click)="numero1.obtenAleatorio();numero2.obtenAleatorio()">Generar número
+        lotería</button>
+    <div id="card" class="card" style="width: auto; margin: auto auto; margin-top: 15px;">
+        <div class="card-body">
+            <h5 class="card-title">Número 1 <img src="https://www.flaticon.es/svg/vstatic/svg/21/21178.svg?token=exp=1614368958~hmac=955bf306d31e5dfe9ea3e6275afdf4d0" width="20px"> <app-generar-loteria #numero1 id="num"></app-generar-loteria></h5>
+            <hr id="sepForm">
+            <h5 class="card-title">Número 2 <img src="https://www.flaticon.es/svg/vstatic/svg/21/21178.svg?token=exp=1614368958~hmac=955bf306d31e5dfe9ea3e6275afdf4d0" width="20px"> <app-generar-loteria #numero2 id="num"></app-generar-loteria></h5>
+            <hr id="sepForm">
+            <h5 class="card-title">El número ganador es: {{numero1.digito}}{{numero2.digito}}.</h5>
+            <h5 class="card-title" *ngIf="numero1.digito==numero2.digito&&numero1.digito!=null">Ambos digitos son
+                iguales. PREMIO</h5>
+            <!--<ng-template #manolito><p>Sigue jugando :(</p></ng-template> ; else manolito se pone arriba despues del null en mi caso-->
+            <h5 class="card-title" *ngIf="numero1.digito!=numero2.digito">Sigue jugando :(</h5>
+            <app-generar-loteria id="num" entrada="1323"></app-generar-loteria>
+            <app-generar-loteria id="num" [objetoEntrada]=objeto></app-generar-loteria>
+
+        </div>
+    </div>
+</div>

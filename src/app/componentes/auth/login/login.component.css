@@ -1,0 +1,46 @@
+hr{
+    border: 0.5px solid black;
+}
+
+h1{
+    text-align: center;
+}
+
+input{
+    text-align: center;
+}
+
+input:focus{
+    font-weight: bold;
+}
+
+input:hover{
+    font-weight: bold;
+    border-color: darkslategray;
+}
+
+button{
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover{
+    font-weight: bold;
+    size: 15px;
+}
+
+#mensaje_error{
+    font-weight: bold;
+    text-align: center;
+}
+
+#titulo{
+    text-align: center;
+    margin-top: -20px;
+}
+
+#but{
+    margin-left: 15px;
+    margin-right: 15px;
+    border-color: cornflowerblue;
+}

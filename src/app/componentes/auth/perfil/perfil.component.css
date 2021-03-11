@@ -1,0 +1,58 @@
+#img {
+    float: right;
+    margin-right: 6px;
+    margin-top: -210px;
+    position: relative;
+    z-index: 2;
+    color: blue;
+    
+}
+
+input{
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: block;
+}
+
+input:focus{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+input:hover{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+#but2{
+    margin-left: 20px;
+    text-align: center;
+}
+
+#but1{
+    text-align: center;
+}
+
+#but1:hover, #but2:hover{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+#but3{
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#but4{
+    margin-right: 15px;
+    margin-left: 15px;
+    margin-bottom: 15px;
+}
+
+#container{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-top: 15px;
+}

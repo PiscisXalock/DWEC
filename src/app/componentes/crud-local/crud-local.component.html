@@ -1,0 +1,76 @@
+<div class="jumbotron">
+    <div class="card">
+        <div class="card-body">
+            <h4 id="titulo" class="card-title">Notas</h4>
+            <div id="frase">
+                <small class="text-muted">Gente,no olvidéis nunca que nadie puede deciros lo valiosos que sois. Sus
+                    espectativas son suyas, las vuestras son vuestras, y son las vuestras las que importan.~
+                    —Rangu</small>
+            </div>
+            <hr id="hrI">
+            <input class="form-control" type="text" placeholder="Título" [(ngModel)]="notaNueva.titulo">
+            <input id="inp" class="form-control" type="text" placeholder="Contenido" [(ngModel)]="notaNueva.contenido">
+            <hr>
+            <div id="container">
+                <button class="btn btn-primary" (click)="insertarNota()">Insertar nota</button>
+            </div>
+            <br>
+            <table class="table table-primary">
+                <thead class="table-primary">
+                    <th>id</th>
+                    <th>Título</th>
+                    <th>Contenido</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let nota of notas" (click)="notaSeleccionada = nota">
+                        <td>{{nota.id}}</td>
+                        <td>{{nota.titulo}}</td>
+                        <td>{{nota.contenido}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <input class="form-control" type="text" [(ngModel)]="notaSeleccionada.titulo">
+            <input id="inp" class="form-control" type="text" [(ngModel)]="notaSeleccionada.contenido">
+            <hr>
+            <div id="container">
+                <button class="btn btn-primary" (click)="editarNota(notaSeleccionada)">Editar nota seleccionada</button>
+                <button id="button" class="btn btn-primary" (click)="borrarNota(notaSeleccionada)">Borrar nota
+                    seleccionada</button>
+            </div>
+            <hr>
+            <h5 id="title">Usuarios</h5>
+            <input class="form-control" type="text" placeholder="nombre" [(ngModel)]="usuarioNuevo.nombre">
+            <input id="inp" class="form-control" type="text" placeholder="apellido" [(ngModel)]="usuarioNuevo.apellido">
+            <hr>
+            <div id="container">
+                <button class="btn btn-primary" (click)="insertarUsuario()">Insertar usuario</button>
+            </div>
+            <br>
+            <table class="table table-primary">
+                <thead class="table-primary">
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellidos</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios" (click)="usuarioSeleccionado = usuario">
+                        <td>{{usuario.id}}</td>
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.apellido}}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <br>
+            <input class="form-control" type="text" [(ngModel)]="usuarioSeleccionado.nombre">
+            <input id="inp" class="form-control" type="text" [(ngModel)]="usuarioSeleccionado.apellido">
+            <hr>
+            <div id="container">
+                <button class="btn btn-primary" (click)="editarUsuario(usuarioSeleccionado)">Editar usuario
+                    seleccionada</button>
+                <button id="button" class="btn btn-primary" (click)="borrarUsuario(usuarioSeleccionado)">Borrar usuario
+                    seleccionada</button>
+            </div>
+        </div>
+    </div>
+</div>

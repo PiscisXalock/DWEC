@@ -1,0 +1,41 @@
+#titulo{
+    text-align: center;
+}
+
+#hrSub{
+    border: 2px solid cornflowerblue;
+}
+
+#sepForm{
+    border: 0.5px solid gray;
+}
+
+input{
+    border-color: black;
+    text-align: center;
+}
+
+input:focus{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+input:hover{
+    font-weight: bold;
+    border: 3px solid cornflowerblue;
+}
+
+button{
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+#errForm{
+    text-align: center;
+    font-weight: bold;
+}

@@ -1,0 +1,23 @@
+#titulo{
+    text-align: center;
+}
+
+#resultado{
+    font-weight: bold;
+    font-size: 16px;
+}
+
+input{
+    border-color: black;
+    text-align: center;
+}
+
+input:focus{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+input:hover{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}

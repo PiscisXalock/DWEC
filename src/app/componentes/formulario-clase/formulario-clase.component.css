@@ -1,0 +1,49 @@
+button{
+    background-color: cornflowerblue;
+    color: white;
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover{
+    border: 1.5px solid lightblue;
+    background-color: cornflowerblue;
+    color: white;
+    font-weight: bold;
+}
+
+#container{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+}
+
+#inp2{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+hr{
+    border: 0.5px solid gray;
+}
+
+#hrSep{
+    border: 0.5px solid cornflowerblue;
+}
+
+h4, #frase, p{
+    text-align: center;
+}
+
+input{
+    text-align: center;
+}
+
+input:focus{
+    font-weight: bold;
+}
+
+input:hover{
+    font-weight: bold;
+    border-color: darkslategray;
+}

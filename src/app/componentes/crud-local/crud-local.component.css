@@ -1,0 +1,50 @@
+table{
+    margin-top: 10px;
+}
+
+#container{
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+#button{
+    margin-left: 15px;
+}
+
+#inp{
+    margin-top: 10px;
+}
+
+#titulo, #frase{
+    text-align: center;
+}
+
+#hrI{
+    border: 0.5px solid cornflowerblue;
+}
+
+hr{
+    border: 0.5px solid gray;
+}
+
+#title{
+    text-align: center;
+    font-weight: bold;
+    border-bottom: 2px solid cornflowerblue;
+}
+
+input{
+    border: 0.5px solid black;
+    text-align: center;
+}
+
+input:hover{
+    border: 0.5px solid cornflowerblue;
+    font-weight: bold;
+}
+
+input:focus{
+    border: 0.5px solid cornflowerblue;
+    font-weight: bold;
+}

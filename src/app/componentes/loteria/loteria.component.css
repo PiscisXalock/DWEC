@@ -1,0 +1,57 @@
+#titulo{
+    text-align: center;
+}
+
+#hf{
+    border: 0.5px solid cornflowerblue;
+}
+
+#sepForm{
+    border: 0.4px solid gray;
+}
+
+input{
+    border-color: black;
+    text-align: center;
+}
+
+input:focus{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+input:hover{
+    font-weight: bold;
+    border: 3px solid cornflowerblue;
+}
+
+button{
+    margin: 0 auto;
+    display: block;
+}
+
+button:hover{
+    font-weight: bold;
+    border-color: cornflowerblue;
+}
+
+#errForm{
+    text-align: center;
+    font-weight: bold;
+}
+
+#num{
+    text-align: center;
+    font-weight: bold;
+}
+
+img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+}
+
+p, h4, h5{
+    text-align: center;
+}

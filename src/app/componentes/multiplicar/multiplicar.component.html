@@ -1,0 +1,10 @@
+<div id="card" class="card" style="width: auto; margin: auto auto; margin-top: 15px;">
+    <div class="card-body">
+        <h5 class="card-title">Ésta es la tabla del {{factor}}</h5>
+        <h6 class="card-subtitle mb-2 text-muted">Haz click aquí abajo para volver a la calculadora</h6>
+        <ul (click)="volverACalculadora()">
+            <li *ngFor="let posicion of tabla; let i = index">{{factor}} * {{i}} = {{factor * i}}.
+            </li>
+        </ul>
+    </div>
+</div>

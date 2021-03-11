@@ -1,0 +1,38 @@
+#err{
+    color: crimson;
+}
+
+button{
+    margin: 0 auto;
+    display: block;
+}
+
+#img {
+    float: right;
+    margin-right: 6px;
+    margin-top: -250px;
+    position: relative;
+    z-index: 2;
+    color: blue;
+}
+
+input{
+    text-align: center;
+}
+
+input:focus{
+    font-weight: bold;
+}
+
+input:hover{
+    font-weight: bold;
+    border-color: darkslategray;
+}
+
+h4, p, #frase{
+    text-align: center;
+}
+
+#hf{
+    border: 0.5px solid cornflowerblue;
+}

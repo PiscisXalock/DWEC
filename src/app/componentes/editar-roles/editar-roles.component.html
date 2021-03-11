@@ -1,0 +1,29 @@
+<blockquote class="blockquote">
+    <p class="mb-0"></p>
+    <footer class="blockquote-footer"> <cite title="Source Title">Roles</cite></footer>
+</blockquote>
+<table class="table table-striped table-inverse table-responsive">
+    <thead class="thead-inverse">
+        <tr>
+            <th>Nombre</th>
+            <th>E-mail</th>
+            <th>Rol</th>
+            <th>Cambiar rol</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor='let usuario of usuarios'>
+            <td scope="row">{{usuario.nombre}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{usuario.nombreRol}}</td>
+            <td>
+                <div class="form-group">
+                    <select class="form-control" [(ngModel)]='usuario.idRol'>
+                        <option *ngFor='let rol of roles' [value]='rol.id'>{{rol.nombreRol}}</option>
+                    </select>
+                    <a class="btn btn-primary" (click)='editarRol(usuario.id, usuario.idRol)'>Actualizar rol</a>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+body{
+    background-image: url("assets/images/fondo.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+nav{
+    border-bottom: 5px solid crimson;
+    font-size: 10px;
+    background-color: white;
+    background-attachment: fixed;
+}
+
+.nav-link:hover{
+    font-weight: bold;
+    font-size: 20px;
+}

@@ -1,0 +1,75 @@
+<div>
+    <div>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <a class="navbar-brand" href="#"><img src="../../../assets/iconos/logo2.png" width="70px"><br></a>
+            <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse"
+                data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                    <li class="nav-item active">
+                        <a class="nav-link" routerLink="/"><img src="../../../assets/iconos/home.png" width="50px"><br>Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/about" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/about.png" width="50px"><br>About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/register" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/registro.png" width="50px"><br>Registro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/loteria" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/loteria.png" width="50px"><br>Lotería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/calculadora"
+                            routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/calcula.png" width="50px"><br>Calculadora</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/tuberias" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/tuberia.png" width="50px"><br>Tuberias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/estructuras"
+                            routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/estructura.png" width="50px"><br>Estructuras</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/formulario" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/formulario.png" width="50px"><br>Formulario</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/crud" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/crud.png" width="50px"><br>Crud</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/crudLocal" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/crud.png" width="50px"><br>Crud Local</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" routerLink="/listarPerfiles" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/perfiles.png" width="50px"><br>Listar
+                            perfiles</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav mt-2 mt-lg-0">
+                    <ng-template [ngIf]='!fnLogged()' [ngIfElse]='salir'>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/registro" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/registro.png" width="50px"><br>Registro</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/login" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/login.png" width="50px"><br>Login</a>
+                        </li>
+                    </ng-template>
+                    <ng-template #salir>
+                        <li class="nav-item">
+                            <a class="nav-link" routerLink="/perfil" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/perfil.png" width="50px"><br>Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a (click)="doLogout()" class="nav-link" routerLink='.'><img src="../../../assets/iconos/logout.png" width="50px"><br>Logout</a>
+                        </li>
+                        <li class="nav-item" *ngIf='fnAdmin()'>
+                            <a class="nav-link" routerLink="/admin" routerLinkActive="{{estiloActivo}}"><img src="../../../assets/iconos/admin.png" width="50px"><br>Admin</a>
+                        </li>
+                    </ng-template>
+                </ul>
+
+            </div>
+
+        </nav>
+    </div>
+</div>

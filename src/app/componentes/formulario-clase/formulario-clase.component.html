@@ -1,0 +1,22 @@
+<div class="jumbotron">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Formulario</h4>
+            <div id="frase">
+                <small class="text-muted">~A veces todo lo que puedes hacer es esperar que mañana sea un día
+                    mejor~<small id="err" class="text">—A</small></small>
+            </div>
+            <hr id="hrSep">
+            <div id="container">
+                <input class="form-control" type="text" placeholder="Nombre" [(ngModel)]="user.nombre">
+                <input id="inp2" class="form-control" type="text" placeholder="Apellidos" [(ngModel)]="user.apellido">
+                <input class="form-control" type="number" placeholder="Edad" [(ngModel)]="user.edad">
+            </div>
+            <hr>
+            <button class="btn" (click)="insertar()">Insertar</button>
+            <br>
+            <p (click)="alertame('Yo soy ' + usern.nombre)" *ngFor="let usern of users">{{usern.nombre}}
+                {{usern.apellido}} {{usern.edad}}.</p>
+        </div>
+    </div>
+</div>

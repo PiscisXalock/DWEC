@@ -1,0 +1,40 @@
+<div class="jumbotron">
+    <h3 id="titulo">
+        Registro<br>
+        <small class="text-muted">~Unete al lado oscuro~ —Darth Vader</small>
+    </h3>
+    <hr class="my-4">
+    <!--<div id="mensaje_error" class="alert alert-danger" role="alert" *ngIf='mens == true'>
+        <strong>{{mensaje}}</strong>
+    </div>-->
+
+    <form [formGroup]="formRegister" (submit)="submit()">
+        <div class="form-group">
+            <input class="form-control" type="text" formControlName="nombre" placeholder="Nombre"><br>
+            <input class="form-control" type="text" formControlName="apellidos" placeholder="Apellidos"><br>
+            <div *ngIf='password0 == true'>
+                <input class="form-control" type="password" formControlName="password" placeholder="Password"><span
+                    (click)="passw1()" class="fa fa-fw fa-eye password-icon show-password"></span><br>
+            </div>
+            <div *ngIf='password0 == false'>
+                <input class="form-control" type="text" formControlName="password" placeholder="Password"><span
+                    (click)="passw1()" class="fa fa-fw fa-eye-slash password-icon show-password"></span><br>
+            </div>
+            <div *ngIf='password1 == true'>
+                <input class="form-control" type="password" formControlName="password2"
+                    placeholder="Repite el password"><span (click)="passw2()"
+                    class="fa fa-fw fa-eye password-icon show-password"></span><br>
+            </div>
+            <div *ngIf='password1 == false'>
+                <input class="form-control" type="text" formControlName="password2"
+                    placeholder="Repite el password"><span (click)="passw2()"
+                    class="fa fa-fw fa-eye-slash password-icon show-password"></span><br>
+            </div>
+            <input class="form-control" type="text" formControlName="email" placeholder="E-Mail"><br>
+            <input class="form-control" type="text" formControlName="dni" placeholder="DNI"><br>
+            <input class="form-control" type="number" formControlName="telefono" placeholder="Teléfono"><br>
+            <hr class="my-4">
+            <button class="btn btn-primary mb-2" type="submit" [disabled]="formRegister.invalid">Registrar</button>
+        </div>
+    </form>
+</div>
